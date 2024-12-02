@@ -1,0 +1,154 @@
+Elastic
+
+Platform - Engineering Productivity - Software
+Engineer ll / III
+
+Elastic, the Search AI Company, enables everyone to find the answers they need in real
+time, using all their data, at scale — unleashing the potential of businesses and people.
+The Elastic Search AI Platform, used by more than 50% of the Fortune 500, brings
+together the precision of search and the intelligence of AI to enable everyone to
+accelerate the results that matter. By taking advantage of all structured and
+unstructured data — securing and protecting private information more effectively —
+Elastic’s complete, cloud-based solutions for search, security, and observability help
+organizations deliver on the promise of AI.
+Diversity is built into us. We unite employees across 30+ countries into one coherent
+team, while the broader community spans over 100 countries. We know that the best
+teams are diverse teams. We encourage you to come as you are, and for people from
+all backgrounds to apply. Bring your unique skills, perspectives, and strengths to make
+our team the best it can be!
+The Platform Engineering Productivity team provides the foundation for Elastic teams to
+develop, build, test, and release their software at scale. We empower them to be
+efficient and independent by providing realistic and reliable developer environments.
+We’re continuously evolving our workflow and increasingly pushing boundaries toward
+Continuous Delivery and Continuous Quality models. Not only this, but we are also
+working on delivering secure solutions to our customers by overcoming vulnerabilities
+introduced into our cloud and CI/CD environments via third-party dependencies that
+could lead to an exploit or breach of our software supply chain. In addition, we provide
+tools, both customized and standard, to improve the development and delivery
+experiences. We’re composed of 30+ engineers distributed across the world.
+Many challenges are ahead of us. We are looking for someone to help us overcome
+them and keep the seamless delivery of our products non-events, regardless of our
+scale. Does this sound like you?
+
+Our productivity infrastructure includes technologies such as:
+● Docker, Kubernetes, ArgoCD, Buildkite, Terraform, CDKTF, Backstage
+● Cloud providers (e.g., GCP, AWS)
+● Signing technology (e.g., GPG, Sigstore, notarization)
+● Programming languages: Java, Go, Python
+
+What you will be doing
+● Building integrations, automations, and platforms that help engineers ship code
+quickly and safely.
+● Reduce sources of toil in our software development lifecycle with software and
+infrastructure engineering practices.
+● Participate in an internal host/on-call rotation to support our internal engineering
+customers.
+● Contribute to our technical plans and direction and across other product teams in
+Elastic.
+● Be part of a distributed team of engineers from all across the globe.
+● Collaborate with other teams within Elastic when working on cross-team efforts.
+● Improve our engineering standards, tooling, and processes
+
+What you bring along
+● A record of software engineer excellence, delivering high-quality code to
+Production
+● Strong experience in a language of choice, such as Python, Go, Java, or Scala
+● Deep passion for automation and for raising the quality bar.
+● Strong analytical, debugging, and problem-solving skills.
+● Learning things up quickly, handling ambiguity & solving big problems
+● Deep understanding of the Software Development Lifecycle: building, packaging,
+testing, and releasing, and experience driving a product release/quality strategy
+● Excellent written and verbal technical communication skills
+● Cloud experience, for example, Terraform, cloud CSPs, Kubernetes, config
+management tools, containerization
+● A passion for working across team boundaries and interacting with internal
+customers
+● You care deeply about the design and quality of the features you ship
+
+● You love working with a diverse, worldwide team in a distributed work
+environment
+● Humble and ambitious attitude.
+● An ability to cultivate a culture of mutual respect, teamwork, and
+consensus-based decision-making
+What you might have
+● Bonus: Experience with FedRAMP Moderate and/or FedRAMP High
+● Bonus: Practical knowledge of Elasticsearch
+
+Elastic is an Equal Employment employer committed to the principles of equal
+employment opportunity and affirmative action for all applicants and employees.
+Qualified applicants will receive consideration for employment without regard to race,
+color, religion, sex, sexual orientation, gender perception or identity, national origin, age,
+marital status, protected veteran status, or disability status or any other basis protected
+by federal, state or local law, ordinance or regulation. Elastic also makes reasonable
+accommodations for disabled employees consistent with applicable law.
+
+Pro Tips
+● We want to make sure you are curious and excited about the company, the
+technology, and the role. If you do not have experience with our ELK stack, we
+highly recommend checking out the following link and playing around with our
+demo enviroment.
+● If you’re unsure of an answer to a question, don’t be afraid to ask to clarify the
+question or ask the interviewers to phrase the question in another way. We want
+the interviews to be two-way conversations so we can both get to know each
+other. So remember to keep your answers concise and honest, if you don’t know
+- say so, be open, and be yourself. As YOU are.
+Please prepare questions for the interview panel - we will always leave time at the end
+of the interview for your curiosity so feel free to ask our interviewers about their
+experience at Elastic, what they like, and what they dislike so you can get a full picture
+of what life is like to be part of the team you’ll be joining. Feel free to check out their
+LinkedIn profiles too so you can see the panel’s background, how long they’ve been
+with us etc.
+
+Resources to Explore
+The links below can be very informative and useful for your understanding of the role
+and to help you prepare for your interviews. Spend some time thinking about your own
+projects and which ones are the most relevant to discuss in your interviews related to
+this role within the Ingest team.
+
+● Elastic Demo Environment
+● Interview Tips
+● Our Source Code
+
+● Use Cases & Testimonials
+● About our Engineering Teams
+● The Elastic YouTube Channel
+
+Hiring Process
+1. Recruiter Screening (45 minutes) - Expect this conversation to touch on your
+experience, motivation to join Elastic, salary requirements, and answer all the
+questions you might have about the role, hiring process, and Elastic.
+2. Technical Interview I - (60 minutes) - In this interview one or two experienced
+engineers will be asking questions to gauge your depth of experience in several
+problem areas, namely:
+● Developer Experience
+● DevOps
+● Infrastructure as Code
+● Software Development Lifecycle
+● CI/CD
+● Automation
+3. Technical Interview II - Hands-On session (60 minutes) - In this session, one
+or two engineers will assist you in building out a small-scale platform given a
+small list of requirements. This can either be done narratively, via code,
+diagramming, or via pseudocode. This is an interactive session where you are
+encouraged to ask questions and give examples of things that may or may not
+work given your experience/knowledge. The interviewers will ask prompt
+
+questions to help guide, but not direct, your outcomes. Our purpose is to gain an
+understanding of your ability to balance between customer requirements and
+infrastructure constraints.
+
+4. Hiring Manager Interview (60 minutes) - During this interview, we will discuss
+your professional experience, motivation to join Elastic, communication skills,
+and expectations. We will also touch on team fit, your ownership skills, and how
+your professional goals align with our values. This is not a technical interview, but
+we may briefly explore your technical experience and skillset. We will reserve
+time at the end for any questions you may have.
+Once you've completed your interviews, our hiring team will gather to discuss and
+evaluate your potential fit at Elastic. They'll consider your technical strengths, how you
+approach problem-solving, your fit with our company culture, and your enthusiasm for
+joining our team.
+We want to highlight the importance of each stage in our hiring process. Your
+progression relies on meeting the expectations at each step. If at any point we
+determine that the fit isn't quite right, we'll need to stop the process there. But please
+rest assured, we're committed to open and kind communication, and we'll always keep
+you informed about your progress.
