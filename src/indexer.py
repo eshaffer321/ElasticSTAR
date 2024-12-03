@@ -18,6 +18,7 @@ class Indexer:
         print(f"Inserting {len(documents)} document(s) into elastic index {self.index_name}")
 
         for doc in documents:
+            # TODO: Make this use the bulk upload instead
             # using the hash of the content as the ID. Should make UUID part of the generation or add ID during inital hashing
             doc_hash = self.create_json_hash(doc)
             try:
