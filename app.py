@@ -1,5 +1,4 @@
-from elastic_transport import ObjectApiResponse
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from elasticsearch import Elasticsearch 
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -18,37 +17,25 @@ elastic_client = Elasticsearch(
 # Initialize Flask app
 app = Flask(__name__)
 
-@app.route('/semantic', methods=['POST'])
-def semantic_search():
-    """Endpoint for semantic search and ChatGPT integration."""
-    data = request.json
-    index_id = data.get('index_id', index_name)
-    query = data.get('query')
-
-    if not query:
-        return jsonify({"error": "Query is required"}), 400
-
-    try:
-        # Perform semantic search
-        search_results = get_docs_with_semantic_search(query, index_id)
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        query = request.form.get("query")
+        if not query:
+            return render_template("index.html", results="No query provided.")
         
-        # Generate ChatGPT response
-        chatgpt_response = get_chatgpt_response(search_results, query)
+        try:
+            # Perform semantic search
+            search_results = get_docs_with_semantic_search(query, os.environ.get("ELASTIC_INDEX_NAME"))
+            
+            # Generate ChatGPT response
+            chatgpt_response = get_chatgpt_response(search_results, query)
+            
+            return render_template("index.html", results=chatgpt_response)
+        except Exception as e:
+            return render_template("index.html", results=f"Error: {str(e)}")
 
+    return render_template("index.html")
 
-        response = {
-            "query": query,
-            "elastic_hits": search_results.body,
-            "chatgpt_response": chatgpt_response
-        }
-        print(response)
-
-
-        return jsonify(response)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-
-if __name__ == '__main__':
-    port = os.environ.get("PORT", 5000)
-    app.run(debug=True, port=port, host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

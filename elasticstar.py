@@ -167,7 +167,7 @@ def get_chatgpt_response(hits, query, model='gpt-4o-mini'):
             model=model,
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that will generate STAR interview stories based on data retrived \
-                                              with elastic searchs semantic search capabilities."},
+                                              with elastic searchs semantic search capabilities. Return it in markdown format with nothing extra besides markdown answer. Do not include any code blocks around the content"},
                 {"role": "user", "content": prompt}
             ]
         )

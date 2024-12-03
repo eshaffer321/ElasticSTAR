@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElasticSTAR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <h1>ElasticSTAR</h1>
+    <p>Enter a query below to perform a search:</p>
+    <form method="POST" action="/">
+        <input type="text" name="query" placeholder="Enter your search query" required>
+        <button type="submit">Search</button>
+    </form>
+    {% if results %}
+        <div id="result"></div>
+        <script>
+            // Convert markdown to HTML and inject it into the #result div
+            const markdownContent = {{ results|tojson }};
+            document.getElementById('result').innerHTML = marked.parse(markdownContent);
+        </script>
+    {% endif %}
+</body>
+</html>
