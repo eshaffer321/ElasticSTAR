@@ -123,35 +123,75 @@ def setup_semantic_search_inference(inference_id):
 def create_index(index_name, inference_id):
     elastic_client.indices.create(
         index=index_name,
-        mappings={
-        "properties": {
-            "title": {
-                "type": "semantic_text",
-                "inference_id": inference_id,
-            },
-            "description": {
-                "type": "semantic_text",
-                "inference_id": inference_id,
-            },
-            "reasoning": {
-                "type": "semantic_text",
-                "inference_id": inference_id,
-            },
-            "relevance_score": {
-                "type": "float"
-            },
-            "category": {
-                "type": "keyword"
-            },
-            "source": {
-                "type": "keyword"
-            },
-            "estimate_confidence": {
-                "type": "keyword"
+        body={
+            "mappings": {
+                "properties": {
+                    "title": {
+                        "type": "semantic_text",
+                        "inference_id": inference_id,
+                    },
+                    "description": {
+                        "type": "semantic_text",
+                        "inference_id": inference_id,
+                    },
+                    "reasoning": {
+                        "type": "semantic_text",
+                        "inference_id": inference_id,
+                    },
+                    "relevance_score": {
+                        "type": "float"
+                    },
+                    "category": {
+                        "type": "keyword"
+                    },
+                    "source": {
+                        "type": "keyword"
+                    },
+                    "estimate_confidence": {
+                        "type": "keyword"
+                    }
+                }
             }
         }
-    }
+    )
+
+def get_chatgpt_response(hits, query, model='gpt-4o-mini'):
+    prompt = f"""
+    Here is the query:
+    {query}
+
+    Here is the top hit from elastic search. Use the most relevant and depriortize quarterly reviews or feedback 
+    {hits}
+    """
+    completion = openai_client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that will generate STAR interview stories based on data retrived \
+                                              with elastic searchs semantic search capabilities."},
+                {"role": "user", "content": prompt}
+            ]
         )
+    response = completion.choices[0].message.content
+    return response
+
+def get_docs_with_semantic_search(query, index_id):
+    resp = elastic_client.search(
+          index=index_id,
+          body={
+              "size" : 5,
+              "_source": {
+                "excludes": ["*.inference"]  # Exclude all 'inference' details
+              },
+              "query": {
+                  "semantic": {
+                      "field": "description",
+                      "query": query 
+                  }
+              }
+          }
+      )
+    return resp
+    
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='ElasticSTAR 0.1')
 
@@ -179,20 +219,11 @@ if __name__ == '__main__':
     if arguments['semantic']:
       index_id = arguments["<index_id>"]
       query = arguments["<query>"]
-      resp = elastic_client.search(
-          index=index_id,
-          body={
-              "_source": {
-                "excludes": ["*.inference"]  # Exclude all 'inference' details
-              },
-              "query": {
-                  "semantic": {
-                      "field": "description",
-                      "query": query 
-                  }
-              }
-          }
-      )
+      docs = get_docs_with_semantic_search(query)
+      get_chatgpt_response(docs, query)
+
+      
+      
 
       
 
