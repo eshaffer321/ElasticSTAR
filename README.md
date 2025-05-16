@@ -1,5 +1,44 @@
 # ElasticSTAR
 
+# ElasticSTAR 🛑 Project Sunset Notice (May 2025)
+
+This project has been **officially sunset** as of May 2025.  
+While it successfully demonstrated a working pipeline for personal knowledge management using Elasticsearch and ChatGPT,  
+I have no plans to maintain, extend, or productionize it.
+
+---
+
+## 🏆 What It Was
+
+ElasticSTAR was a personal knowledge database designed to:
+- Parse and summarize professional experience data.
+- Index it into Elasticsearch.
+- Allow natural language querying via a CLI with ChatGPT-powered answers.
+
+### Example Use Cases Included:
+- Interview preparation with STAR-style responses.
+- Personal knowledge retrieval.
+- Context-aware querying of past work.
+
+---
+
+## 🛠️ Key Technologies
+- Python
+- Elasticsearch
+- OpenAI’s ChatGPT API
+- Command-Line Interface (CLI)
+
+---
+
+## ⚠️ Status
+This project is **no longer maintained**.  
+The code remains public as a reference or portfolio artifact,  
+but it is **not recommended for active use without modification or extension**.
+
+---
+
+> Shipped. Learned. Moving on.
+
 **ElasticSTAR** is a personal knowledge database built to index professional experiences and achievements, providing concise and context-rich answers to your questions. It leverages Elasticsearch for efficient data retrieval and ChatGPT for retrieval-augmented generation (RAG), creating a powerful pipeline for querying and summarizing your personal knowledge.
 
 ---
